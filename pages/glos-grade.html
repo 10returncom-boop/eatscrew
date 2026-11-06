@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>強度等級 4.8 / 8.8 / 10.9 / 12.9 ｜ Eatscrew 吃螺絲 | 精密百科</title>
+<meta name="description" content="公制螺栓強度等級標示方式：小數點前×100=抗拉強度MPa，小數點後×10=降伏比%，一次看懂 4.8/8.8/10.9/12.9。">
+<link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-slug="glos-grade">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="brand"><span class="brand-mark">S</span><span data-site-name>Eatscrew 吃螺絲精密百科</span></a>
+    <ul class="main-nav" id="mainNav" style="list-style:none;display:flex;margin:0;padding:0;"></ul>
+    <div class="header-tools">
+      
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+    </div>
+  </div>
+</header>
+
+<div class="breadcrumb-bar" id="breadcrumb"></div>
+
+<main class="container page-body">
+  <aside class="sidebar">
+    <h3>📑 本頁導覽</h3>
+    <nav>
+      <a href="#read">標示讀法</a>
+      <a href="#table">等級對照表</a>
+      <a href="#material">對應材質</a>
+      <a href="#select">選用原則</a>
+    </nav>
+    <div style="margin-top:var(--sp-3)"><h3>🧭 全站分類</h3><div id="sidebarNav"></div></div>
+  </aside>
+
+  <article class="content">
+    <h1 class="page-title">螺栓強度等級（Property Class）</h1>
+
+    <h2 id="read">標示讀法（ISO 898-1）</h2>
+    <p>公制螺栓頭上通常打上如 <strong>8.8</strong>、<strong>10.9</strong>、<strong>12.9</strong> 的記號，讀法如下：</p>
+    <ul>
+      <li><strong>小數點前數字 × 100 = 公稱抗拉強度 σb（MPa）</strong>。例：8.8 → 8×100 = 800 MPa。</li>
+      <li><strong>小數點前 × 小數點後 × 10 = 降伏強度 σ0.2（MPa）</strong>。例：8.8 → 8×8×10 = 640 MPa。</li>
+      <li>因此 8.8 級 = 抗拉 800 MPa、降伏 640 MPa（降伏比 0.8）。</li>
+    </ul>
+
+    <h2 id="table">等級對照表</h2>
+    <table class="info-table">
+      <thead><tr><th>等級</th><th>抗拉 σb (MPa)</th><th>降伏 σ0.2 (MPa)</th><th>降伏比</th><th>硬度 HRC</th><th>典型用途</th></tr></thead>
+      <tbody>
+        <tr><td>4.8</td><td>420</td><td>340</td><td>0.80</td><td>~20 HRB</td><td>一般鎖付、低碳鋼</td></tr>
+        <tr><td>5.8</td><td>520</td><td>420</td><td>0.80</td><td>~28 HRB</td><td>一般結構</td></tr>
+        <tr><td>6.8</td><td>600</td><td>480</td><td>0.80</td><td>~35 HRB</td><td>機械</td></tr>
+        <tr><td><strong>8.8</strong></td><td><strong>800</strong></td><td><strong>640</strong></td><td>0.80</td><td>22–32 HRC</td><td><strong>最通用，機械、車輛</strong></td></tr>
+        <tr><td>10.9</td><td>1040</td><td>940</td><td>0.90</td><td>32–39 HRC</td><td>車輛、引擎、重負荷</td></tr>
+        <tr><td>12.9</td><td>1220</td><td>1100</td><td>0.95</td><td>39–44 HRC</td><td>超高強度，需注意氫脆</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="material">對應材質</h2>
+    <ul>
+      <li><strong>4.8 / 5.8</strong>：低碳鋼（1008、1018），冷鐓後不熱處理。</li>
+      <li><strong>8.8</strong>：中碳鋼（1035、1045）或低碳合金鋼（硼鋼），淬火回火 Q&T。</li>
+      <li><strong>10.9</strong>：Cr-Mo 合金鋼（SCM435、42CrMo），滲碳或調質。</li>
+      <li><strong>12.9</strong>：高合金鋼（34CrNiMo、SCM440），淬火回火後須除氫。</li>
+    </ul>
+
+    <h2 id="select">選用原則</h2>
+    <ul>
+      <li>一般室內機構：8.8 足夠。</li>
+      <li>車輛引擎、底盤：10.9 為主。</li>
+      <li>12.9 雖強度高，但<strong>對氫脆敏感</strong>，電鍍後必須加熱除氫（190–220°C × 4hr）。</li>
+      <li>不鏽鋼體系另標 A1-50、A2-70、A4-80，不可與鋼製等級混用。</li>
+      <li>選用較高等級並非越強越好：剛性、疲勞、鬆動、成本都要一併考慮。</li>
+    </ul>
+  </article>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+<script src="../js/data.js"></script><script src="../js/main.js"></script>
+</body>
+</html>

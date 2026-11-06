@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>扭力 / 扭斷試驗 ｜ Eatscrew 吃螺絲 | 精密百科</title>
+<meta name="description" content="螺栓扭轉試驗：小尺寸螺絲（M1.6–M10）做扭斷扭矩與扭矩係數，M8×1.25 乾式 8.8 級約 32 N·m，對應 ISO 898-1。">
+<link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-slug="qc-torque">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="brand"><span class="brand-mark">S</span><span data-site-name>Eatscrew 吃螺絲精密百科</span></a>
+    <ul class="main-nav" id="mainNav" style="list-style:none;display:flex;margin:0;padding:0;"></ul>
+    <div class="header-tools">
+      
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+    </div>
+  </div>
+</header>
+
+<div class="breadcrumb-bar" id="breadcrumb"></div>
+
+<main class="container page-body">
+  <aside class="sidebar">
+    <h3>📑 本頁導覽</h3>
+    <nav>
+      <a href="#overview">概述</a>
+      <a href="#standard">適用標準</a>
+      <a href="#procedure">試驗步驟</a>
+      <a href="#criteria">數值參考</a>
+      <a href="#issue">常見問題</a>
+    </nav>
+    <div style="margin-top:var(--sp-3)"><h3>🧭 全站分類</h3><div id="sidebarNav"></div></div>
+  </aside>
+
+  <article class="content">
+    <h1 class="page-title">扭力與扭斷試驗</h1>
+
+    <h2 id="overview">概述</h2>
+    <p>太小的螺絲（一般 M3 以下或長度不夠做拉力試驗的）無法上萬能拉力機，ISO 898-1 改要求做<strong>扭轉試驗</strong>：一支螺絲一端固定、另一端施加扭轉角，記錄扭斷扭矩與破斷位置。它同時是螺絲出廠時驗證滾牙與熱處理是否到位的快速手段。</p>
+
+    <h2 id="standard">適用標準</h2>
+    <ul>
+      <li><strong>ISO 898-1</strong> 附錄：規定螺絲做扭轉試驗的條件與最低扭斷扭矩。</li>
+      <li><strong>ISO 16047</strong>：扭力－夾緊力測試台，用來量產線即時監控摩擦係數。</li>
+      <li><strong>ASTM F606</strong>：美系螺栓機械性質試驗方法，含扭轉項。</li>
+    </ul>
+
+    <h2 id="procedure">試驗步驟</h2>
+    <ol>
+      <li>螺絲一端以專用夾頭夾緊，另一端置入測力轉軸。</li>
+      <li>以定速旋轉（約每分鐘數轉）持續施扭轉，連續記錄扭矩曲線。</li>
+      <li>記錄最大扭斷扭矩 Tb，觀察斷斷位置：應斷在螺紋段或桿身，而非頭下圓角。</li>
+      <li>需要時同步計算扭轉角度，評估塑性。</li>
+    </ol>
+    <figure>
+      <img src="../assets/torsion_tester_bolt_torque_coefficient.webp" alt="臥式螺栓扭轉試驗機，夾持螺絲進行扭斷與扭矩係數量測，對應 ISO 898-1 對小尺寸螺絲的機械性質檢驗要求">
+      <figcaption>臥式扭轉試驗機：本體含扭矩感測器，可輸出扭矩－角度曲線。</figcaption>
+    </figure>
+
+    <h2 id="criteria">數值參考</h2>
+    <p>以下為 8.8 級、乾式無潤滑、K=0.20、90% 降伏點利用之工程參考值，非 ISO 898-1 強制值：</p>
+    <table class="info-table">
+      <tr><th>規格</th><th>公稱應力截面積 As (mm²)</th><th>參考鎖緊扭矩 (N·m)</th></tr>
+      <tr><td>M6</td><td>20.1</td><td>9–11</td></tr>
+      <tr><td>M8</td><td>39.7</td><td>22–32</td></tr>
+      <tr><td>M10</td><td>58.0</td><td>39–52</td></tr>
+      <tr><td>M12</td><td>84.3</td><td>70–85</td></tr>
+    </table>
+    <p>潤滑後（K 降到 0.15）同樣預緊力所需扭矩可降約 25%，這就是鎖緊工藝裡「摩擦係數一致比大力更重要」的原因。</p>
+
+    <h2 id="issue">常見問題</h2>
+    <ul>
+      <li><strong>在頭下圓角斷裂</strong>：頭部成形有摺疊或模損，屬不良批。</li>
+      <li><strong>扭斷扭矩明顯偏低</strong>：熱處理硬度不足或材料換料未更新批號。</li>
+      <li><strong>斷口呈扁平剪切面</strong>：氫脆或過回火脆性，需追加金相。</li>
+    </ul>
+
+    <h2 id="sources">資料來源</h2>
+    <ul>
+      <li><a href="https://pei.ir/wp-content/uploads/2022/04/1-ISO_898-1_2009E.pdf" target="_blank" rel="noopener">ISO 898-1:2009 標準原文 PDF</a></li>
+      <li><a href="https://mechdatum.com/en/fasteners/torque-values-metric/" target="_blank" rel="noopener">MechDatum 公制螺栓扭矩與強度數據</a></li>
+      <li><a href="https://metricmech.com/articles/m8-bolt-torque-tightening-values-grade-8-8-10-9" target="_blank" rel="noopener">MetricMech M8/M10 8.8 級鎖緊扭矩參考</a></li>
+    </ul>
+  </article>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+<script src="../js/data.js"></script><script src="../js/main.js"></script>
+</body>
+</html>
