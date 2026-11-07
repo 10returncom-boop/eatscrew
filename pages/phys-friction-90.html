@@ -26,22 +26,32 @@
     <h3>📑 本頁導覽</h3>
     <nav>
       <a href="#overview">概述</a>
-      <a href="#related">相關條目</a>
     </nav>
     <div style="margin-top:var(--sp-3)"><h3>🧭 全站分類</h3><div id="sidebarNav"></div></div>
   </aside>
 
-  <article class="content">
+      <article class="content">
     <h1 class="page-title">鎖緊扭矩 90% 耗在摩擦</h1>
 
-    <h2 id="overview">概述</h2>
-    <p>只有約 10% 變成夾緊力</p>
-    <p style="color:var(--c-text-mute);background:var(--c-bg-soft);padding:12px 16px;border-radius:8px;border-left:4px solid var(--c-primary);">
-      🚧 本條目內容建置中，敬請期待。以上為摘要說明，完整規格、尺寸表、應用案例將於近期補上。
-    </p>
+    <h2 id="overview">力學原理</h2>
+    <p>只有約 10% 變成夾緊力。</p>
+
+    <h2 id="physics">用物理理解螺絲</h2>
+    <p>螺絲本質上是一個<strong>斜面繞著圓柱捲起來</strong>的機械裝置。轉一圈，前進一個牙距，用很小的轉扭力換來很大的軸向拉力。這個機械優勢同時也是它會鬆動的根源：當反向力矩超過摩擦阻力，它就會自己轉回來。</p>
+
+    <h2 id="key">關鍵觀念</h2>
+    <ul>
+      <li><strong>預緊力 Preload：</strong>鎖緊後螺栓被拉長、被夾件被壓縮，這對彈力就是夾持力。</li>
+      <li><strong>摩擦係數 CoF：</strong>90% 的鎖緊扭矩耗在螺紋與墊圈摩擦，只有 10% 變成夾緊力。</li>
+      <li><strong>剛度比：</strong>螺栓與被夾件的剛度比決定外載如何分攤。</li>
+      <li><strong>疲勞：</strong>反覆小振幅負荷比一次大負荷更致命。</li>
+    </ul>
+
+    <h2 id="example">數字感</h2>
+    <p>以 M8×1.25 8.8 級為例，目標預緊力約 20 kN，對應扭矩約 22–25 N·m（乾燥鋅表面）。如果上油潤滑，同樣扭矩下預緊力可能跳到 35 kN，接近降伏點。這就是為什麼「有扭力扳手」不保證安全——摩擦係數才是變數。</p>
 
     <h2 id="related">相關條目</h2>
-    <p>返回 <a href="../index.html">首頁</a> 或至 <a href="../pages/kb.html">主題知識區</a> 瀏覽其他螺絲百科條目。</p>
+    <p>返回 <a href="../index.html">首頁</a> 或至 <a href="toc.html">主題知識區</a> 瀏覽其他螺絲百科條目。</p>
   </article>
 </main>
 
