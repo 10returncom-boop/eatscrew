@@ -342,6 +342,36 @@
       </div>`;
   }
 
+  /* ---------- 6.5 手機漢堡選單 ---------- */
+  function initMobileNav() {
+    const tools = document.querySelector(".header-tools");
+    if (!tools || document.getElementById("navToggle")) return;
+    const btn = document.createElement("button");
+    btn.className = "nav-toggle";
+    btn.id = "navToggle";
+    btn.setAttribute("aria-label", "開啟選單");
+    btn.textContent = "☰";
+    tools.insertBefore(btn, tools.firstChild);
+
+    const overlay = document.createElement("div");
+    overlay.className = "nav-overlay";
+    overlay.id = "navOverlay";
+    document.body.appendChild(overlay);
+
+    const close = () => {
+      document.body.classList.remove("nav-open");
+      btn.textContent = "☰";
+    };
+    btn.addEventListener("click", () => {
+      const open = document.body.classList.toggle("nav-open");
+      btn.textContent = open ? "✕" : "☰";
+    });
+    overlay.addEventListener("click", close);
+    document.addEventListener("click", e => {
+      if (e.target.closest("#mainNav a")) close();
+    });
+  }
+
   /* ---------- 啟動 ---------- */
   document.addEventListener("DOMContentLoaded", () => {
     renderMegaMenu();
@@ -352,6 +382,7 @@
     renderTOCBlock();
     initSearch();
     renderFooter();
+    initMobileNav();
     // 統一 brand 名稱
     document.querySelectorAll("[data-site-name]").forEach(el => el.textContent = SITE_CONFIG.name);
   });
