@@ -424,6 +424,22 @@ html[data-theme="dark"] .hero {
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--sp-2);
 }
 
+/* ---------- 手機漢堡選單 base（先於 media query 宣告） ---------- */
+.nav-toggle {
+  display: none;
+  background: transparent; border: none; cursor: pointer;
+  font-size: 22px; line-height: 1; padding: 4px 8px;
+  color: #0a1a2c;
+}
+html[data-theme="dark"] .nav-toggle { color: #e6e0fb; }
+.nav-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 199;
+}
+body.nav-open .nav-overlay { display: block; }
+
 /* ---------- 響應式 ---------- */
 @media (max-width: 960px) {
   .page-body { grid-template-columns: 1fr; }
@@ -459,20 +475,6 @@ html[data-theme="dark"] .hero {
   }
   .mega-group { margin-bottom: 10px; }
 }
-.nav-toggle {
-  display: none;
-  background: transparent; border: none; cursor: pointer;
-  font-size: 22px; line-height: 1; padding: 4px 8px;
-  color: #0a1a2c;
-}
-html[data-theme="dark"] .nav-toggle { color: #e6e0fb; }
-.nav-overlay {
-  display: none;
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,.45);
-  z-index: 199;
-}
-body.nav-open .nav-overlay { display: block; }
 @media (max-width: 600px) {
   .hero-stats { gap: var(--sp-3); }
   .footer-grid { grid-template-columns: 1fr; }
