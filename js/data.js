@@ -4,9 +4,7 @@
  * 架構：第一層頂部主選單 → 第二層 MegaMenu 面板分組 → 第三層具體條目
  * ========================================================================== */
 
-(function () {
-
-const SITE_CONFIG = {
+var SITE_CONFIG = {
   name: "Eatscrew 吃螺絲",
   nameEn: "Eatscrew Screw Encyclopedia",
   brandFull: "Eatscrew 吃螺絲 | 精密百科",
@@ -18,7 +16,7 @@ const SITE_CONFIG = {
 };
 
 /* 3 層 MegaMenu 主數據 */
-const MEGA_MENU = [
+var MEGA_MENU = [
   {
     id: "types",
     label: "螺絲類型庫",
@@ -535,7 +533,7 @@ const MEGA_MENU = [
 ];
 
 /* 全站條目索引（供檢索用） */
-const SITE_INDEX = (() => {
+var SITE_INDEX = (() => {
   const idx = [];
   MEGA_MENU.forEach(top => {
     top.groups.forEach(g => {
@@ -560,7 +558,7 @@ const SITE_INDEX = (() => {
  * 第一層：3 篇 ｜ 第二層：100 條目 ｜ 第三層：200 細目（每條目 2 細目）
  * 每一層皆完整收錄（不能缺），並對應到現有頁面 slug 以利跳轉
  * ========================================================================== */
-const TOC = {
+var TOC = {
   title: "全站百科目錄",
   intro: "第一層 篇（3）／第二層 條目（100）／第三層 細目（200），三層全數收錄。",
   parts: [
@@ -889,7 +887,7 @@ const TOC = {
 };
 
 /* 建置 TOC 條目索引（供檢索），並併入全站索引 */
-const TOC_INDEX = (() => {
+var TOC_INDEX = (() => {
   const idx = [];
   TOC.parts.forEach(p => {
     p.items.forEach(it => {
@@ -908,4 +906,3 @@ window.MEGA_MENU = MEGA_MENU;
 window.SITE_INDEX = SITE_INDEX.concat(TOC_INDEX);
 window.TOC = TOC;
 
-})();
