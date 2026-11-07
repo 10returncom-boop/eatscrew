@@ -245,13 +245,13 @@ html[data-theme="dark"] .site-header {
   align-items: center;
   background:
     linear-gradient(180deg, rgba(8,30,55,.08) 0%, rgba(8,30,55,.04) 55%, rgba(8,30,55,.18) 100%),
-    url("../assets/hero_bg_wide_panorama.png") center/cover no-repeat;
+    url("../assets/hero_bg_wide_panorama.webp") center/cover no-repeat;
   color: #fff;
 }
 html[data-theme="dark"] .hero {
   background:
     linear-gradient(180deg, rgba(5,18,32,.18) 0%, rgba(5,18,32,.10) 55%, rgba(5,18,32,.30) 100%),
-    url("../assets/hero_bg_wide_panorama.png") center/cover no-repeat;
+    url("../assets/hero_bg_wide_panorama.webp") center/cover no-repeat;
 }
 .hero-text-card {
   max-width: 620px;
