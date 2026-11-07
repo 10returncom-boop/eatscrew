@@ -283,8 +283,9 @@
     }
     // 由 MEGA_MENU 建立索引
     if (!window.SITE_INDEX) {
+      const menu = (typeof MEGA_MENU !== "undefined") ? MEGA_MENU : (window.MEGA_MENU || []);
       window.SITE_INDEX = [];
-      (window.MEGA_MENU || []).forEach(top => {
+      menu.forEach(top => {
         (top.groups || []).forEach(g => {
           (g.items || []).forEach(it => {
             window.SITE_INDEX.push({
