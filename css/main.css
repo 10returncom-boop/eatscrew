@@ -193,6 +193,36 @@ html[data-theme="dark"] .site-header {
   content: "🔍"; position: absolute; left: 8px; top: 50%;
   transform: translateY(-50%); font-size: 12px; opacity: .6;
 }
+/* 全站搜尋 */
+.site-search {
+  width: 220px; padding: 6px 10px 6px 30px;
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-size: var(--fs-sm);
+  outline: none;
+}
+.site-search:focus { border-color: var(--c-primary); }
+.search-results {
+  position: absolute; top: calc(100% + 6px); right: 0;
+  width: 320px; max-height: 60vh; overflow-y: auto;
+  background: var(--c-bg); border: 1px solid var(--c-border);
+  border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  z-index: 300; padding: 6px; display: none;
+}
+.search-results.open { display: block; }
+.search-results a {
+  display: block; padding: 8px 10px; border-radius: 6px;
+  text-decoration: none; color: var(--c-text);
+}
+.search-results a:hover { background: var(--c-bg-soft); }
+.search-results .sr-cat { font-size: 11px; color: var(--c-text-mute); }
+.search-results .sr-empty { padding: 12px; color: var(--c-text-mute); font-size: var(--fs-sm); }
+@media (max-width: 600px) {
+  .site-search { width: 140px; }
+  .search-results { width: 260px; right: -20px; }
+}
 .theme-toggle {
   width: 32px; height: 32px; border-radius: 4px;
   display: grid; place-items: center;

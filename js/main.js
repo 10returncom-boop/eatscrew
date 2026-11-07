@@ -270,32 +270,55 @@
 
   /* ---------- 5. 全站檢索 ---------- */
   function initSearch() {
-    const box = document.getElementById("searchInput");
-    const res = document.getElementById("searchResults");
-    if (!box || !res || !window.SITE_INDEX) return;
+    const box = document.getElementById("siteSearch");
+    if (!box) return;
+    // 動態產生結果 dropdown
+    let res = document.getElementById("searchResults");
+    if (!res) {
+      res = document.createElement("div");
+      res.id = "searchResults";
+      res.className = "search-results";
+      box.parentElement.style.position = "relative";
+      box.parentElement.appendChild(res);
+    }
+    // 由 MEGA_MENU 建立索引
+    if (!window.SITE_INDEX) {
+      window.SITE_INDEX = [];
+      (window.MEGA_MENU || []).forEach(top => {
+        (top.groups || []).forEach(g => {
+          (g.items || []).forEach(it => {
+            window.SITE_INDEX.push({
+              slug: it.slug, name: it.name, desc: it.desc,
+              group: g.group, top: top.label
+            });
+          });
+        });
+      });
+    }
     box.addEventListener("input", () => {
       const q = box.value.trim().toLowerCase();
-      if (q.length < 2) { res.classList.remove("active"); res.innerHTML = ""; return; }
+      if (q.length < 2) { res.classList.remove("open"); res.innerHTML = ""; return; }
       const hits = SITE_INDEX.filter(i =>
         i.name.toLowerCase().includes(q) ||
         i.desc.toLowerCase().includes(q) ||
-        i.group.toLowerCase().includes(q)
+        i.group.toLowerCase().includes(q) ||
+        i.slug.toLowerCase().includes(q)
       ).slice(0, 12);
       if (!hits.length) {
-        res.innerHTML = `<a href="#"><div class="res-cat">無結果</div>找不到「${box.value}」</a>`;
+        res.innerHTML = `<div class="sr-empty">找不到「${box.value}」</div>`;
       } else {
         res.innerHTML = hits.map(h => `
           <a href="${pageHref(h.slug)}">
             <div><strong>${h.name}</strong></div>
-            <div class="res-cat">${h.top} · ${h.group}</div>
-            <div style="font-size:12px;color:var(--c-text-mute)">${h.desc}</div>
+            <div class="sr-cat">${h.top} · ${h.group}</div>
           </a>
         `).join("");
       }
-      res.classList.add("active");
+      res.classList.add("open");
     });
+    box.addEventListener("focus", () => { if (box.value.trim().length >= 2) res.classList.add("open"); });
     document.addEventListener("click", e => {
-      if (!e.target.closest(".search-box")) res.classList.remove("active");
+      if (!e.target.closest(".header-tools")) res.classList.remove("open");
     });
   }
 
