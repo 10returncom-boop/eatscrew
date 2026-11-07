@@ -41,7 +41,7 @@
   function renderMegaMenu() {
     const nav = document.getElementById("mainNav");
     if (!nav || !window.MEGA_MENU) return;
-    nav.innerHTML = MEGA_MENU
+    nav.innerHTML = window.MEGA_MENU
       .filter(top => top.id !== "trivia")
       .map(top => `
       <li class="nav-item">
@@ -238,11 +238,11 @@
     if (!slug) {
       bar.innerHTML = `<div class="container"><div class="breadcrumb">
         <a href="../index.html">首頁</a><span class="sep">/</span>
-        <span class="current">${SITE_CONFIG.name}</span>
+        <span class="current">${window.SITE_CONFIG.name}</span>
       </div></div>`;
       return;
     }
-    const item = SITE_INDEX.find(i => i.slug === slug);
+    const item = window.SITE_INDEX.find(i => i.slug === slug);
     if (!item) return;
     bar.innerHTML = `<div class="container"><div class="breadcrumb">
       <a href="../index.html">首頁</a><span class="sep">/</span>
@@ -256,7 +256,7 @@
     const sb = document.getElementById("sidebarNav");
     if (!sb || !window.MEGA_MENU) return;
     const currentSlug = document.body.dataset.slug;
-    sb.innerHTML = MEGA_MENU.map(top => `
+    sb.innerHTML = window.MEGA_MENU.map(top => `
       <div class="sidebar-group">
         <h3>${top.icon} ${top.label}</h3>
         <nav>
@@ -281,9 +281,9 @@
       box.parentElement.style.position = "relative";
       box.parentElement.appendChild(res);
     }
-    // 由 MEGA_MENU 建立索引
+    // 由 window.MEGA_MENU 建立索引
     if (!window.SITE_INDEX) {
-      const menu = (typeof MEGA_MENU !== "undefined") ? MEGA_MENU : (window.MEGA_MENU || []);
+      const menu = (typeof window.MEGA_MENU !== "undefined") ? window.MEGA_MENU : (window.MEGA_MENU || []);
       window.SITE_INDEX = [];
       menu.forEach(top => {
         (top.groups || []).forEach(g => {
@@ -299,7 +299,7 @@
     box.addEventListener("input", () => {
       const q = box.value.trim().toLowerCase();
       if (q.length < 2) { res.classList.remove("open"); res.innerHTML = ""; return; }
-      const hits = SITE_INDEX.filter(i =>
+      const hits = window.SITE_INDEX.filter(i =>
         i.name.toLowerCase().includes(q) ||
         i.desc.toLowerCase().includes(q) ||
         i.group.toLowerCase().includes(q) ||
@@ -333,8 +333,8 @@
       <div class="container">
         <div class="footer-grid">
           <div>
-            <h4>${SITE_CONFIG.name} <small style="color:var(--c-text-mute)">${SITE_CONFIG.ddc}</small></h4>
-            <p style="font-size:var(--fs-sm);color:var(--c-text-mute)">${SITE_CONFIG.description}</p>
+            <h4>${window.SITE_CONFIG.name} <small style="color:var(--c-text-mute)">${window.SITE_CONFIG.ddc}</small></h4>
+            <p style="font-size:var(--fs-sm);color:var(--c-text-mute)">${window.SITE_CONFIG.description}</p>
           </div>
           <div>
             <h4>螺絲類型</h4>
@@ -360,8 +360,8 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© ${new Date().getFullYear()} ${SITE_CONFIG.name} · ${SITE_CONFIG.nameEn}</span>
-          <span>版本 ${SITE_CONFIG.version} · ${SITE_CONFIG.updated} · 編輯 ${SITE_CONFIG.author}</span>
+          <span>© ${new Date().getFullYear()} ${window.SITE_CONFIG.name} · ${window.SITE_CONFIG.nameEn}</span>
+          <span>版本 ${window.SITE_CONFIG.version} · ${window.SITE_CONFIG.updated} · 編輯 ${window.SITE_CONFIG.author}</span>
         </div>
       </div>`;
   }
@@ -408,6 +408,6 @@
     renderFooter();
     initMobileNav();
     // 統一 brand 名稱
-    document.querySelectorAll("[data-site-name]").forEach(el => el.textContent = SITE_CONFIG.name);
+    document.querySelectorAll("[data-site-name]").forEach(el => el.textContent = window.SITE_CONFIG.name);
   });
 })();

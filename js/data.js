@@ -4,6 +4,8 @@
  * 架構：第一層頂部主選單 → 第二層 MegaMenu 面板分組 → 第三層具體條目
  * ========================================================================== */
 
+(function () {
+
 const SITE_CONFIG = {
   name: "Eatscrew 吃螺絲",
   nameEn: "Eatscrew Screw Encyclopedia",
@@ -905,3 +907,5 @@ window.SITE_CONFIG = SITE_CONFIG;
 window.MEGA_MENU = MEGA_MENU;
 window.SITE_INDEX = SITE_INDEX.concat(TOC_INDEX);
 window.TOC = TOC;
+
+})();
